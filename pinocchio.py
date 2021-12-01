@@ -6,13 +6,13 @@
 
 import random
 
-array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+n = 261
+array = [i + random.randint(0, 1000) for i in range(n)]
 random.shuffle(array)
-# array = [10, 2, 3, 4, 5, 6, 7, 8, 1, 9]
 
 hash_table = {}
 halves = []
-target_val = 8
+target_val = 1000
 
 def order_of_1_operation_val_in_hash_map(val):
 	try:
@@ -29,4 +29,6 @@ for val in array:
 	
 	hash_table[val] = val
 
-print(halves)
+for left, right in halves:
+	print(f"Left: {left} Right: {right}")
+	assert left + right == target_val
